@@ -42,6 +42,14 @@ for file in \$(git diff --cached --name-only); do
 
         git add .
     fi
+
+    ## ipynbの場合
+    if [[ \$file == *.py ]]; then
+        ## format py
+        black \${file}
+
+        git add .
+    fi
 done
 EOF
 
