@@ -6,4 +6,8 @@ profile = ProfileReport(data, title="Profiling Report")
 # profile.to_notebook_iframe()
 profile.to_file("./train_data_report.html")
 
-print(  'asdf'    )    
+str = (
+    "hoge"
+    "fuga"
+    "piyo"
+)
