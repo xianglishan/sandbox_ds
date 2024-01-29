@@ -35,10 +35,10 @@ class CFG:
     VER = 1
     AUTHOR = "takaito"
     COMPETITION = "FUDA2"
-    DATA_PATH = Path("/content/drive/MyDrive/Colab Notebooks/FUDA2/data")
-    OOF_DATA_PATH = Path("/content/drive/MyDrive/Colab Notebooks/FUDA2/oof")
-    MODEL_DATA_PATH = Path("/content/drive/MyDrive/Colab Notebooks/FUDA2/models")
-    SUB_DATA_PATH = Path("/content/drive/MyDrive/Colab Notebooks/FUDA2/submission")
+    DATA_PATH = Path("")
+    OOF_DATA_PATH = Path("/workspaces/fuda2_output/oof")
+    MODEL_DATA_PATH = Path("/workspaces/fuda2_output/models")
+    SUB_DATA_PATH = Path("/workspaces/fuda2_output/submission")
     METHOD_LIST = ["lightgbm", "xgboost", "catboost"]
     seed = 42
     n_folds = 7
