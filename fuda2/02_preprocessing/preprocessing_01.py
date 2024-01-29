@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-def preprocess(data: pd.DataFrame):
+def preprocess(data: pd.DataFrame) -> pd.DataFrame:
     print(f"********* もともとのデータshape:{data.shape} *********")
 
     # 新規ビジネスかどうか
@@ -40,15 +40,27 @@ def preprocess(data: pd.DataFrame):
     # Stateは削除しちゃう
     data = data.drop(["State"], axis=1)
     # $のやつ
-    data["DisbursementGross"].str.replace("$", "").str.replace(",", "").str.replace(
-        " ", ""
-    ).astype(float)
-    data["GrAppv"].str.replace("$", "").str.replace(",", "").str.replace(
-        " ", ""
-    ).astype(float)
-    data["SBA_Appv"].str.replace("$", "").str.replace(",", "").str.replace(
-        " ", ""
-    ).astype(float)
+    data["DisbursementGross"] = (
+        data["DisbursementGross"]
+        .str.replace("$", "")
+        .str.replace(",", "")
+        .str.replace(" ", "")
+        .astype(float)
+    )
+    data["GrAppv"] = (
+        data["GrAppv"]
+        .str.replace("$", "")
+        .str.replace(",", "")
+        .str.replace(" ", "")
+        .astype(float)
+    )
+    data["SBA_Appv"] = (
+        data["SBA_Appv"]
+        .str.replace("$", "")
+        .str.replace(",", "")
+        .str.replace(" ", "")
+        .astype(float)
+    )
     # UrbanRural *1 = 都市部、2 = 田舎、0 = 未定義, 都会っぽい順に大きくしてみる
     data["UrbanRural"] = data["UrbanRural"].map({1: 2, 2: 0, 0: 1})
 
