@@ -229,7 +229,7 @@ def gradient_boosting_model_cv_training(
     )
 
 
-def Learning(data: pd.DataFrame, features: list, categorical_features: list):
+def learn(data: pd.DataFrame, features: list, categorical_features: list):
     for method in CFG.METHOD_LIST:
         gradient_boosting_model_cv_training(
             method, data, features, categorical_features
